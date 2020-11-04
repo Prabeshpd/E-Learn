@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps"
+    "start:dev": "nodemon --watch .env --watch src --exec babel-node src --source-maps",
+     "lint": "eslint src"
   },
   "author": "",
   "license": "ISC",
