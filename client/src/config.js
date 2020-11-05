@@ -8,6 +8,7 @@ const config = {
     create: '/users',
     fetchOne: '/users/:id',
     fetchAll: '/users',
+    self: '/users/me',
   },
   tasks: {
     create: '/tasks',
