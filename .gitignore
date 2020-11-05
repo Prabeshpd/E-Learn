@@ -1,28 +1,20 @@
-# OS X
-.DS_Store*
-Icon?
-._*
+# Dependency directories
+node_modules
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Optional npm cache directory
+.npm
 
-# Linux
-.directory
-*~
-
-# emacs local conf
-**/.dir-locals.el
-
-# npm
-**/node_modules
-**/package-lock.json
-*.log
-*.gz
-
-
-# Coveralls
-**/coverage
-
+# Dotenv configuration
 .env
+
+# Visual Studio Code
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# VisualStudioCode Patch
+**/.history
+
+# Local Test
+play
