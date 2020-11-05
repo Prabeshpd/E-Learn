@@ -15,7 +15,6 @@ const renderComponent = (rootElement) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const reactElement = document.getElementById("app");
-  console.log("adsfsdafds");
   if (reactElement) {
     try {
       renderComponent(reactElement);
