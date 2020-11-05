@@ -1,0 +1,41 @@
+import http from '@Utils/https';
+
+import config from '../config';
+
+/**
+ * Fetch data of the logged in user.
+ *
+ * @returns {Promise}
+ */
+export async function fetchSelf() {
+  const url = config.users.self;
+  const { data } = await http.get(url);
+
+  return data;
+}
+
+/**
+ * Fetch ALl users.
+ *
+ * @returns {Promise}
+ */
+export async function fetchAll() {
+  const url = config.users.all;
+  const { data } = await http.get(url);
+
+  return data;
+}
+
+export async function create(payload) {
+  const url = config.users.create;
+  const { data } = await http.post(url, payload);
+
+  return data;
+}
+
+export async function signIn(payload) {
+  const url = config.users.signIn;
+  const { data } = await http.post(url, payload);
+
+  return data;
+}
