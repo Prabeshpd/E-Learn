@@ -3,7 +3,11 @@
     "browser": true,
     "es2020": true
   },
-  "extends": ["plugin:react/recommended", "airbnb-base", "prettier", "eslint-plugin-leapfrog"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb-base",
+    "prettier"
+    ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {

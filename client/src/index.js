@@ -1,5 +1,3 @@
-import './public';
-
 import { render } from 'react-dom';
 import React, { StrictMode } from 'react';
 

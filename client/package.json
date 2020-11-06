@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server"
+    "dev": "./node_modules/.bin/webpack-dev-server",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
