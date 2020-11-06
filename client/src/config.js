@@ -10,6 +10,10 @@ const config = {
     fetchAll: '/users',
     self: '/users/me',
   },
+  auth: {
+    signIn: '/users/signIn',
+    refreshAccessToken: '/users/refreshTokens',
+  },
   tasks: {
     create: '/tasks',
     fetchOne: '/tasks/:id',

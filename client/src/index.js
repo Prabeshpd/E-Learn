@@ -1,25 +1,45 @@
-import { render } from "react-dom";
-import React, { StrictMode } from "react";
+import './public';
 
-import RedBox from "redbox-react";
+import { render } from 'react-dom';
+import React, { StrictMode } from 'react';
+
+import RedBox from 'redbox-react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import config from './config';
+import App from './components/App';
+
+import store, { persistor } from './stores';
+
+import init from './init';
+
+init();
 
 const renderComponent = (rootElement) => {
   render(
-    <StrictMode>
-      <div>Hello World</div>
-    </StrictMode>,
-
+    <PersistGate persistor={persistor}>
+      <Provider store={store}>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </Provider>
+    </PersistGate>,
     rootElement
   );
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const reactElement = document.getElementById("app");
+document.addEventListener('DOMContentLoaded', () => {
+  const reactElement = document.getElementById('app');
+
   if (reactElement) {
-    try {
+    if (config.env === 'development') {
+      try {
+        renderComponent(reactElement);
+      } catch (e) {
+        render(<RedBox error={e} />, reactElement);
+      }
+    } else {
       renderComponent(reactElement);
-    } catch (e) {
-      render(<RedBox error={e} />, reactElement);
     }
   }
 });
