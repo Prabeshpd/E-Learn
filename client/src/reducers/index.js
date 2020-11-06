@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import auth from './auth';
 import users from './users';
-import tasks from './tasks';
+// import tasks from './tasks';
 
 export default combineReducers({
   users,

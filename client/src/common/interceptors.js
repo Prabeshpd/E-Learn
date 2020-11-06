@@ -3,7 +3,7 @@ import HttpStatus from 'http-status';
 import * as authService from '@Services/users';
 import * as tokenService from '@Services/tokens';
 
-import http from '@Utils/http';
+import http from '@Utils/https';
 
 const RETRY_COUNT_LIMIT = 3;
 const TOKEN_EXPIRE = 'Token expired';
@@ -58,9 +58,7 @@ export async function responseInterceptor(error) {
     !originalRequest.__isRetryRequest
   ) {
     originalRequest._retry = true;
-    originalRequest.retryCount = isNaN(originalRequest.retryCount)
-      ? 1
-      : originalRequest.retryCount++;
+    originalRequest.retryCount = originalRequest.retryCount ? 1 : originalRequest.retryCount + 1;
 
     const refreshToken = tokenService.getRefreshToken();
     const { data } = await authService.refresh(refreshToken);

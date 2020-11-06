@@ -1,5 +1,6 @@
-import config from '../config';
 import http from '@Utils/https';
+
+import config from '../config';
 import * as tokenService from './tokens';
 
 /**
