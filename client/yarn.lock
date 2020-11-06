@@ -2640,6 +2640,11 @@ commander@^6.2.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.0.tgz#b990bfb8ac030aedc6d11bc04d1488ffef56db75"
   integrity sha512-zP4jEKbe8SHzKJYQmq8Y9gYjtO/POJLgIdKgV7B9qNmABVFVc+ctqSX6iXh4mCpJfRBOabiZ2YKPg8ciDw6C+Q==
 
+comment-parser@^0.7.2:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-0.7.6.tgz#0e743a53c8e646c899a1323db31f6cd337b10f12"
+  integrity sha512-GKNxVA7/iuTnAqGADlTWX4tkhzxZKXp5fLJqKTlQLHkE65XDUKutZ3BHaJC5IGcper2tT3QRD1xr4o3jNpgXXg==
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -3497,6 +3502,14 @@ eslint-config-airbnb-base@^14.2.0:
     object.assign "^4.1.0"
     object.entries "^1.1.2"
 
+eslint-config-leapfrog@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-leapfrog/-/eslint-config-leapfrog-3.0.0.tgz#c4c5a381e5170cea33128d21f7a9aa2565ea2d7c"
+  integrity sha512-FPBZerzDIzE5kJDDzGEnM95dRW5+KBG1z5C0eTzBcS+OEb4Ah348kBPyltyHLOcjIU+X9kmzG+906cFSVNFpGQ==
+  dependencies:
+    eslint-plugin-jsdoc "^22.1.0"
+    eslint-plugin-react "^7.19.0"
+
 eslint-config-prettier@^6.11.0:
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.15.0.tgz#7f93f6cb7d45a92f1537a70ecc06366e1ac6fed9"
@@ -3555,6 +3568,19 @@ eslint-plugin-import@^2.22.0:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
+eslint-plugin-jsdoc@^22.1.0:
+  version "22.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-22.2.0.tgz#b89159e01ed8eeee4f6512101e96cac6a2999461"
+  integrity sha512-r8yRB6jGay9tJkx1BherKFtOkpDud086VZenUqZiZe0F7cD4OABhte0xcj3/7mXPuJbaou8WF3JzEtTdDnCzhA==
+  dependencies:
+    comment-parser "^0.7.2"
+    debug "^4.1.1"
+    jsdoctypeparser "^6.1.0"
+    lodash "^4.17.15"
+    regextras "^0.7.0"
+    semver "^6.3.0"
+    spdx-expression-parse "^3.0.0"
+
 eslint-plugin-jsx-a11y@^6.3.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.4.1.tgz#a2d84caa49756942f42f1ffab9002436391718fd"
@@ -3584,7 +3610,7 @@ eslint-plugin-react-hooks@^4.0.8:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz#8c229c268d468956334c943bb45fc860280f5556"
   integrity sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ==
 
-eslint-plugin-react@^7.20.3:
+eslint-plugin-react@^7.19.0, eslint-plugin-react@^7.20.3:
   version "7.21.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.21.5.tgz#50b21a412b9574bfe05b21db176e8b7b3b15bff3"
   integrity sha512-8MaEggC2et0wSF6bUeywF7qQ46ER81irOdWS4QWxnnlAEsnzeBevk1sWh7fhpCghPpXb+8Ks7hvaft6L/xsR6g==
@@ -5667,6 +5693,11 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+
+jsdoctypeparser@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/jsdoctypeparser/-/jsdoctypeparser-6.1.0.tgz#acfb936c26300d98f1405cb03e20b06748e512a8"
+  integrity sha512-UCQBZ3xCUBv/PLfwKAJhp6jmGOSLFNKzrotXGNgbKhWvz27wPsCsVeP7gIcHPElQw2agBmynAitXqhxR58XAmA==
 
 jsdom@^16.4.0:
   version "16.4.0"
@@ -7768,6 +7799,11 @@ regexpu-core@^4.7.1:
     regjsparser "^0.6.4"
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.2.0"
+
+regextras@^0.7.0:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/regextras/-/regextras-0.7.1.tgz#be95719d5f43f9ef0b9fa07ad89b7c606995a3b2"
+  integrity sha512-9YXf6xtW+qzQ+hcMQXx95MOvfqXFgsKDZodX3qZB0x2n5Z94ioetIITsBtvJbiOyxa/6s9AtyweBLCdPmPko/w==
 
 registry-auth-token@^4.0.0:
   version "4.2.0"

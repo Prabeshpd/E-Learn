@@ -2,6 +2,7 @@ import {
   SIGN_IN_USER_REJECTED,
   SIGN_IN_USER_PENDING,
   SIGN_IN_USER_FULFILLED,
+  SIGN_OUT,
 } from '@Actions/users';
 
 const INITIAL_STATE = {

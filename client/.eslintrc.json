@@ -3,11 +3,7 @@
     "browser": true,
     "es2020": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb-base",
-    "prettier"
-  ],
+  "extends": ["plugin:react/recommended", "airbnb-base", "prettier", "eslint-plugin-leapfrog"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,19 +12,13 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "react/jsx-props-no-spreading": [
@@ -51,10 +41,7 @@
     ],
     "react/button-has-type": "off",
     "no-shadow": "off",
-    "linebreak-style": [
-      "error",
-      "unix"
-    ]
+    "linebreak-style": ["error", "unix"]
   },
   "settings": {
     "import/resolver": "webpack",

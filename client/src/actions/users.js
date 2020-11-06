@@ -24,7 +24,7 @@ export const FETCH_CURRENT_USER_FULFILLED = 'FETCH_CURRENT_USER_FULFILLED';
 
 export const createUser = createAction(CREATE_USER, userService.create);
 export const fetchCurrentUser = createAction(FETCH_CURRENT_USER, userService.fetchSelf);
-export const fetchUsers = createAction(FETCH_USER, userService.fetchAll);
+export const fetchUsers = createAction(FETCH_USERS, userService.fetchAll);
 export const signInUser = createAction(SIGN_IN_USER, userService.signIn);
 
 export const SIGN_OUT = 'SIGN_OUT';
