@@ -1,6 +1,6 @@
-import http from '@Utils/https';
-
 import config from '../config';
+import http from '@Utils/https';
+import * as tokenService from './tokens';
 
 /**
  * Fetch data of the logged in user.
@@ -34,8 +34,28 @@ export async function create(payload) {
 }
 
 export async function signIn(payload) {
-  const url = config.users.signIn;
-  const { data } = await http.post(url, payload);
+  const url = config.auth.signIn;
+  const { token } = await http.post(url, payload);
+  tokenService.persist(token);
+  const { data } = await fetchSelf();
+
+  return data;
+}
+
+export function signOut() {
+  tokenService.clear();
+}
+
+/**
+ * Refresh access token.
+ *
+ * @param {string} refreshToken
+ * @returns {Promise<{accessToken, refreshToken}>}
+ */
+export async function refresh(refreshToken) {
+  const url = config.auth.refreshAccessToken;
+
+  const { data } = await http.post(url, { refreshToken });
 
   return data;
 }
