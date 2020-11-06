@@ -1,16 +1,6 @@
-import * as storage from '../utils/storage';
+import * as storage from '@Utils/storage';
 
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../constants/storage';
-
-/**
- * Persist token to storage.
- *
- * @param {{accessToken, refresToken}} params
- */
-export function persist({ accessToken, refreshToken }) {
-  setAccessToken(accessToken);
-  setRefreshToken(refreshToken);
-}
 
 /**
  * Get access token from storage.
@@ -47,6 +37,16 @@ export function getRefreshToken() {
  */
 export function setRefreshToken(refreshToken) {
   return storage.set(REFRESH_TOKEN, refreshToken);
+}
+
+/**
+ * Persist token to storage.
+ *
+ * @param {{accessToken, refresToken}} params
+ */
+export function persist({ accessToken, refreshToken }) {
+  setAccessToken(accessToken);
+  setRefreshToken(refreshToken);
 }
 
 /**

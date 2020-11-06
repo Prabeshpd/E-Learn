@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "./node_modules/.bin/webpack-dev-server"
+    "dev": "./node_modules/.bin/webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
-    "devDependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
     "@types/yup": "^0.29.6",
@@ -16,6 +16,7 @@
     "babel-jest": "^26.2.2",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-leapfrog": "^3.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-plugin-import": "^2.22.0",
@@ -37,7 +38,6 @@
     "webpack-dev-server": "~3.11"
   },
   "dependencies": {
-    "react": "^17.0.1",
     "@babel/core": "7.10.2",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
@@ -66,6 +66,7 @@
     "pinterpolate": "^0.2.3",
     "prop-types": "~15.7",
     "qs": "^6.9.4",
+    "react": "^17.0.1",
     "react-dom": "~16.13",
     "react-hot-loader": "^4.12.21",
     "react-redux": "^7.2.0",

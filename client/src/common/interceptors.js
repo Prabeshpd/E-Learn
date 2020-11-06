@@ -3,7 +3,7 @@ import HttpStatus from 'http-status';
 import * as authService from '@Services/users';
 import * as tokenService from '@Services/tokens';
 
-import http from '../utils/http';
+import http from '@Utils/http';
 
 const RETRY_COUNT_LIMIT = 3;
 const TOKEN_EXPIRE = 'Token expired';
