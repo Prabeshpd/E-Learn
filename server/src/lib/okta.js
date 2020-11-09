@@ -1,6 +1,6 @@
 import okta from '@okta/okta-sdk-nodejs';
 
-import config from '../../config';
+import config from '../config';
 
 const {
   okta: { token, host },

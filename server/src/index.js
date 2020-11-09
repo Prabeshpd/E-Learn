@@ -6,24 +6,26 @@ import express from 'express';
 import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import cors from './middlewares/cors';
 import exphbs from 'express-handlebars';
 import router from './routes';
+import config from './config';
 
 const app = express();
 
-// const APP_PORT = config.node_env === 'test' ? config.test.port : config.app.port;
-// const APP_HOST = config.app.host;
+const APP_PORT = config.node_env === 'test' ? config.test.port : config.app.port;
+const APP_HOST = config.app.host;
 
-app.set('port', '3000');
-app.set('host', '0.0.0.0');
+app.set('port', APP_PORT);
+app.set('host', APP_HOST);
 
 // const pathToSwaggerUi = require('swagger-ui-dist').absolutePath();
 
-app.locals.title = 'demo';
-app.locals.version = '1.0.0';
+app.locals.title = config.app.name;
+app.locals.version = config.app.version;
 
 app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
-// app.use(cors);
+app.use(cors);
 app.use(helmet());
 app.use(compression());
 app.use(morgan('tiny'));
