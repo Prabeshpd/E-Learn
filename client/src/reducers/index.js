@@ -2,9 +2,10 @@ import { combineReducers } from 'redux';
 
 import auth from './auth';
 import users from './users';
-// import tasks from './tasks';
+import todos from './todos';
 
 export default combineReducers({
   users,
   auth,
+  todos,
 });

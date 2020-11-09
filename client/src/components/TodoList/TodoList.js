@@ -1,33 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import { hot } from 'react-hot-loader/root';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import Todo from './Todo';
 
 import listIcon from '../../assets/list.png';
 
 const TodoList = () => {
-  const todoItems = [
-    {
-      id: 1,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: true,
-    },
-    {
-      id: 2,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: false,
-    },
-    {
-      id: 3,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: false,
-    },
-    {
-      id: 4,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: true,
-    },
-  ];
+  const todoItems = useSelector((state) => state.todos.items);
 
   const [isEmpty, setEmptyStatus] = useState(false);
 

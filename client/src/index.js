@@ -15,14 +15,11 @@ init();
 
 const renderComponent = (rootElement) => {
   render(
-    // <PersistGate persistor={persistor}>
-    //   <Provider store={store}>
-    //     <StrictMode>
-    //       <App />
-    //     </StrictMode>
-    //   </Provider>
-    // </PersistGate>,
-    <App></App>,
+    <Provider store={store}>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </Provider>,
     rootElement
   );
 };

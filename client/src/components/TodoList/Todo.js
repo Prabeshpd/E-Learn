@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader/root';
+import { useDispatch } from 'react-redux';
+
+import { deleteTodo, toggleTodo } from '@Actions/todos';
 
 import formatDeadline from '@Utils/dateFormatter';
 import dateParser from '@Utils/dateParser';
@@ -13,6 +16,8 @@ import deleteIcon from '../../assets/delete.png';
 import '../../styles/Todo.css';
 
 const Todo = (props) => {
+  const dispatch = useDispatch();
+
   const getTextStyle = () => {
     return {
       textDecoration: props.completed ? 'line-through' : 'none',
@@ -26,15 +31,17 @@ const Todo = (props) => {
         type="checkbox"
         className="completion-checkbox"
         name="completion-status"
-        // onChange={props.toggleMark.bind(props.id)}
         defaultChecked={props.completed}
+        onClick={() => dispatch(toggleTodo(props.id))}
       ></input>
       <span className="task">{props.task}</span>
-      <button
-        className="delete-task"
-        // onClick={props.deleteTask.bind(props.id)}
-      >
-        <img src={deleteIcon} className="delete-icon" alt="delete"></img>
+      <button className="delete-task">
+        <img
+          src={deleteIcon}
+          className="delete-icon"
+          alt="delete"
+          onClick={() => dispatch(deleteTodo(props.id))}
+        ></img>
       </button>
       {props.deadline && (
         <p
