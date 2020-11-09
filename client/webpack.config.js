@@ -82,8 +82,10 @@ module.exports = {
       '@Services': path.resolve(__dirname, 'src/services/'),
       '@Utils': path.resolve(__dirname, 'src/utils/'),
       '@Commons': path.resolve(__dirname, 'src/common/'),
+      '@Assets': path.resolve(__dirname, 'src/assets/'),
+      '@Styles': path.resolve(__dirname, 'src/styles/'),
     },
-    extensions: ['*', '.js', '.jsx', '.scss', '.css'],
+    extensions: ['*', '.js', '.jsx', '.scss', '.css', '.png', '.jpg', '.jpeg'],
   },
   output: {
     path: path.resolve(__dirname, './public/dist'),
