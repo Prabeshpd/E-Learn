@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server",
+    "build": "./node_modules/.bin/webpack",
     "lint": "eslint ."
   },
   "author": "",
@@ -49,6 +50,8 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.6.2",
+    "@okta/okta-auth-js": "^4.1.1",
+    "@okta/okta-react": "^3.0.8",
     "@tippyjs/react": "^4.1.0",
     "@types/jest": "^26.0.9",
     "axios": "^0.19.2",

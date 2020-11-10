@@ -10,10 +10,10 @@ import rootReducer from './reducers';
 const enhancers = [applyMiddleware(thunk, promise)];
 
 if (process.env.REACT_APP_ENV !== env.PRODUCTION && window.__REDUX_DEVTOOLS_EXTENSION__) {
+  console.log('adsfdsfdsfds');
   enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
 }
-const store = createStore(rootReducer, compose(...enhancers));
+const store = createStore(rootReducer, undefined, compose(...enhancers));
 const persistor = persistStore(store);
 
-export default store;
-export { persistor };
+export { persistor, store };

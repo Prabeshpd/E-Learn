@@ -6,7 +6,8 @@
       "@Services/*": ["./src/services/*"],
       "@Utils/*": ["./src/utils/*"],
       "@Actions/*": ["./src/actions/*"],
-      "@Commons/*": ["./src/common/*"]
+      "@Commons/*": ["./src/common/*"],
+      "@Constants/*": ["./src/constants/*"]
     }
   },
   //Add any build/compiled folders here to stop vscode searching those

@@ -82,6 +82,7 @@ module.exports = {
       '@Services': path.resolve(__dirname, 'src/services/'),
       '@Utils': path.resolve(__dirname, 'src/utils/'),
       '@Commons': path.resolve(__dirname, 'src/common/'),
+      '@Constants': path.resolve(__dirname, 'src/constants/'),
     },
     extensions: ['*', '.js', '.jsx', '.scss', '.css'],
   },

@@ -75,7 +75,7 @@ export async function responseInterceptor(error) {
     message === REFRESH_TOKEN_DOESNT_EXIST ||
     originalRequest.retryCount > RETRY_COUNT_LIMIT
   ) {
-    await authService.logout();
+    await authService.signOut();
   }
 
   return Promise.reject(error);

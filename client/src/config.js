@@ -19,6 +19,12 @@ const config = {
     fetchOne: '/tasks/:id',
     fetchUserTask: '/tasks/user/:userId',
   },
+  okta: {
+    url: process.env.OKTA_API_URL,
+    issuer: process.env.OKTA_ISSUER,
+    redirect_uri: window.location.origin + '/implicit/callback',
+    client_id: process.env.OKTA_CLIENT_ID,
+  },
 };
 
 export default config;
