@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader/root';
 import { useDispatch } from 'react-redux';
 
 import { deleteTodo, toggleTodo } from '@Actions/todos';
@@ -66,4 +65,4 @@ Todo.propTypes = {
   deadline: PropTypes.string,
 };
 
-export default hot(Todo);
+export default Todo;

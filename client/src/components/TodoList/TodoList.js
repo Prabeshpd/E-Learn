@@ -1,4 +1,3 @@
-import { hot } from 'react-hot-loader/root';
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -41,4 +40,4 @@ const TodoList = () => {
   );
 };
 
-export default hot(TodoList);
+export default TodoList;

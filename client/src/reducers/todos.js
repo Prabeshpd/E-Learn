@@ -2,28 +2,7 @@ import { FETCH_TODOS_BEGIN, FETCH_TODOS_SUCCESS, FETCH_TODOS_FAILURE } from '@Ac
 
 const INITIAL_STATE = {
   isTodosLoading: false,
-  items: [
-    {
-      id: 1,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: true,
-    },
-    {
-      id: 2,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: false,
-    },
-    {
-      id: 3,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: false,
-    },
-    {
-      id: 4,
-      task: 'Dolor eiusmod consectetur exercitation exercitation minim magna sit.',
-      completed: true,
-    },
-  ],
+  items: [],
   error: null,
 };
 
