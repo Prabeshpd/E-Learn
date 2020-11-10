@@ -1,3 +1,5 @@
+import './env';
+
 import * as pkg from '../package.json';
 
 const config = {

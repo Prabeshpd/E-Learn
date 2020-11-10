@@ -1,3 +1,10 @@
+/**
+ * Create tables users and todos
+ *
+ * @param   {object} knex
+ * @returns {Promise}
+ */
+
 exports.up = (knex) => {
   return knex.schema
     .createTable('users', (table) => {
@@ -9,14 +16,15 @@ exports.up = (knex) => {
       table.timestamp('created_at').defaultTo(knex.fn.now());
       table.timestamp('updated_at').defaultTo(knex.fn.now());
     })
-    .createTable('todo', (table) => {
+    .createTable('todos', (table) => {
       table.increments('id');
-      table.string('name').notNullable();
-      table.enu('status', ['active', 'inactive']).notNullable();
-      table.integer('user_id').references('id').inTable('users');
+      table.string('task').notNullable();
+      table.boolean('completed').notNullable().defaultTo(false);
+      table.integer('user_id').references('id').inTable('users').onDelete('CASCADE');
+      table.timestamp('deadline').defaultTo(null);
       table.timestamp('created_at').defaultTo(knex.fn.now());
       table.timestamp('updated_at').defaultTo(knex.fn.now());
     });
 };
 
-exports.down = (knex) => knex.schema.dropTable('todo').dropTable('users');
+exports.down = (knex) => knex.schema.dropTable('todos').dropTable('users');

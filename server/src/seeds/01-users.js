@@ -1,3 +1,9 @@
+/**
+ * Delete existing entries and seed values for users.
+ *
+ * @param   {object} knex
+ * @returns {Promise}
+ */
 exports.seed = (knex) => {
   return knex('users')
     .del('users')

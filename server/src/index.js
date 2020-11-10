@@ -1,4 +1,5 @@
 import fs from 'fs';
+import cors from 'cors';
 import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -6,10 +7,12 @@ import express from 'express';
 import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
-import cors from './middlewares/cors';
 import exphbs from 'express-handlebars';
+
 import router from './routes';
 import config from './config';
+
+import * as errorHandler from './middlewares/errorHandler';
 
 const app = express();
 
@@ -25,7 +28,7 @@ app.locals.title = config.app.name;
 app.locals.version = config.app.version;
 
 app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
-app.use(cors);
+app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use(morgan('tiny'));
@@ -37,6 +40,11 @@ app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
 app.use('/api/v1', router);
+
+// Error handling middlewares
+app.use(errorHandler.genericErrorHandler);
+app.use(errorHandler.notFound);
+app.use(errorHandler.methodNotAllowed);
 
 app.listen(app.get('port'), app.get('host'), () => {
   console.log(`Server started at http://${app.get('host')}:${app.get('port')}/api/v1`);
