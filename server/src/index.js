@@ -25,6 +25,7 @@ app.locals.title = config.app.name;
 app.locals.version = config.app.version;
 
 app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
+console.log(cors);
 app.use(cors);
 app.use(helmet());
 app.use(compression());

@@ -2,6 +2,9 @@ import http from '@Utils/https';
 
 import config from '../config';
 import * as tokenService from './tokens';
+import { OktaAuth } from '@okta/okta-auth-js';
+
+const oktaAuth = new OktaAuth(config.okta);
 
 /**
  * Fetch data of the logged in user.
@@ -35,8 +38,14 @@ export async function create(payload) {
 }
 
 export async function signIn(payload) {
-  const url = config.auth.signIn;
-  const { token } = await http.post(url, payload);
+  console.log(payload);
+  const { username, password } = payload;
+  console.log(username, password);
+  const user = await oktaAuth.signIn({
+    username,
+    password,
+  });
+  console.log(user);
   tokenService.persist(token);
   const { data } = await fetchSelf();
 

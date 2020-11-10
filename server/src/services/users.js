@@ -6,6 +6,11 @@ export async function createUser(payload) {
     profile: { firstName, lastName, email, login: email },
     credentials: { password: { value: password } },
   };
-
-  return oktaClient.createUser(newUSer);
+  console.log(newUSer);
+  try {
+    const user = await oktaClient.createUser(newUSer);
+    return user;
+  } catch (e) {
+    console.log(e);
+  }
 }

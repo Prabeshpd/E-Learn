@@ -14,8 +14,8 @@ function LoginForm(props) {
         password: '',
       }}
       onSubmit={async (values) => {
-        const { email, password } = values;
-        await login(email, password);
+        const { username, password } = values;
+        await login(username, password);
       }}
     >
       {(props) => {

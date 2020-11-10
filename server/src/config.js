@@ -8,15 +8,15 @@ const config = {
     port: process.env.APP_PORT || '3000',
     host: process.env.APP_HOST || '0.0.0.0',
   },
-  reactAppBaseURI: process.env.REACT_APP_BASE_URI,
+  reactAppBaseURI: process.env.REACT_APP_BASE_URI || 'http://localhost:3001',
 
   test: {
     port: process.env.TEST_APP_PORT,
   },
 
   okta: {
-    host: process.env.OKTA_HOST,
-    token: process.env.OKTA_TOKEN,
+    host: process.env.OKTA_HOST || 'http://dev-8880385.okta.com',
+    token: process.env.OKTA_TOKEN || '00SGHUd7EdEz5W1MOUivfxrkmklhmf21o6jDukNF10',
   },
 };
 

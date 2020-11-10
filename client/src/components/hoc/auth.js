@@ -15,12 +15,12 @@ import * as routes from '../../constants/routes';
 
 const withAuthState = (WrappedComponent) => {
   function Auth(props) {
-    const login = async (email, password) => {
+    const login = async (username, password) => {
       const { signInUser } = props;
 
       try {
         await signInUser({
-          email,
+          username,
           password,
         });
 

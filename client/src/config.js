@@ -2,10 +2,10 @@ const config = {
   env: process.env.NODE_ENV || 'development',
   basename: process.env.REACT_APP_BASE_NAME || '/',
   backendAPI: {
-    baseURI: process.env.backendPortalAPI,
+    baseURI: process.env.BACK_END_PORTAL_API,
   },
   users: {
-    create: '/users',
+    create: '/users/signUp',
     fetchOne: '/users/:id',
     fetchAll: '/users',
     self: '/users/me',

@@ -5,6 +5,7 @@ import * as userController from '../../controllers/users';
 const router = Router();
 
 router.post('/signUp', async (req, res, next) => {
+  console.log(req.body);
   const { body: payload } = req;
 
   userController
