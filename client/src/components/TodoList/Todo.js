@@ -31,7 +31,7 @@ const Todo = (props) => {
         className="completion-checkbox"
         name="completion-status"
         defaultChecked={props.completed}
-        onClick={() => dispatch(toggleTodo(props.id))}
+        onClick={() => dispatch(toggleTodo(props.id, props))}
       ></input>
       <span className="task">{props.task}</span>
       <button className="delete-task">

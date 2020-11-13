@@ -16,11 +16,23 @@ export const fetchTodosFailure = (error) => {
   return { type: FETCH_TODOS_FAILURE, payload: error };
 };
 
-export const addTodo = (todo) => {
-  return (dispatch, getState) => {
+export const fetchTodos = () => {
+  return async (dispatch) => {
     dispatch(fetchTodosBegin());
     try {
-      const todos = todoService.addNewTodo(todo, getState().todos.items);
+      const todos = await todoService.getTodos();
+      dispatch(fetchTodosSuccess(todos));
+    } catch (error) {
+      dispatch(fetchTodosFailure(error));
+    }
+  };
+};
+
+export const addTodo = (todo) => {
+  return async (dispatch, getState) => {
+    dispatch(fetchTodosBegin());
+    try {
+      const todos = await todoService.addNewTodo(todo, getState().todos.items);
       dispatch(fetchTodosSuccess(todos));
     } catch (error) {
       dispatch(fetchTodosFailure(error));
@@ -29,10 +41,10 @@ export const addTodo = (todo) => {
 };
 
 export const deleteTodo = (id) => {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     dispatch(fetchTodosBegin());
     try {
-      const todos = todoService.deleteTodo(id, getState().todos.items);
+      const todos = await todoService.deleteTodo(id, getState().todos.items);
       dispatch(fetchTodosSuccess(todos));
     } catch (error) {
       dispatch(fetchTodosFailure(error));
@@ -40,14 +52,14 @@ export const deleteTodo = (id) => {
   };
 };
 
-export const toggleTodo = (id) => {
-  return (dispatch, getState) => {
+export const toggleTodo = (id, todo) => {
+  return async (dispatch, getState) => {
     dispatch(fetchTodosBegin());
     try {
-      const todos = todoService.toggleTodo(id, getState().todos.items);
+      const todos = await todoService.toggleTodo(id, todo, getState().todos.items);
       dispatch(fetchTodosSuccess(todos));
     } catch (error) {
-      dispatch(fetchTodosFailure());
+      dispatch(fetchTodosFailure(error));
     }
   };
 };

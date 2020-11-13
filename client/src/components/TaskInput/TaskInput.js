@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import DateTimePicker from 'react-datetime-picker';
 
 import { addTodo } from '@Actions/todos';
@@ -23,7 +22,6 @@ const TaskInput = () => {
     event.preventDefault();
 
     const todo = {
-      id: uuidv4(),
       task,
       deadline,
       completed: false,
