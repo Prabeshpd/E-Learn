@@ -1,5 +1,8 @@
 import { Router } from 'express';
 
+import userRoutes from './routes/userRoutes';
+import todoRoutes from './routes/todoRoutes';
+
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -8,5 +11,8 @@ router.get('/', (req, res) => {
     apiVersion: req.app.locals.version,
   });
 });
+
+router.use('/users', userRoutes);
+router.use('/todos', todoRoutes);
 
 export default router;
