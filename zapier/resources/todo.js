@@ -9,7 +9,7 @@ const config = require('../config');
  */
 const performList = async (z, bundle) => {
 	const response = await z.request({
-		url: `${config.API_BASE_URI}/${config.endpoints.todos}`,
+		url: `${config.API_BASE_URI}${config.endpoints.todos}`,
 		params: {
 			tag: bundle.inputData.tagName,
 		},
@@ -31,7 +31,7 @@ const performList = async (z, bundle) => {
 const performCreate = async (z, bundle) => {
 	const response = await z.request({
 		method: 'POST',
-		url: `${config.API_BASE_URI}/${config.endpoints.todos}`,
+		url: `${config.API_BASE_URI}${config.endpoints.todos}`,
 		body: {
 			task: bundle.inputData.task,
 			completed: bundle.inputData.completed || false,

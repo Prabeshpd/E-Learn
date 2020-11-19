@@ -9,10 +9,7 @@ const config = require('../config');
  */
 const fetchTodos = async (z, bundle) => {
 	const response = await z.request({
-		url: `${config.API_BASE_URI}/${config.endpoints.todos}`,
-		params: {
-			tag: bundle.inputData.tagName,
-		},
+		url: `${config.API_BASE_URI}${config.endpoints.todos}`,
 		headers: {
 			Authentication: bundle.authData.Authentication,
 		},

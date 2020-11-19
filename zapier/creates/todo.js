@@ -10,7 +10,7 @@ const config = require('../config');
 const createTodo = async (z, bundle) => {
 	const response = await z.request({
 		method: 'POST',
-		url: `${config.API_BASE_URI}/${config.endpoints.todos}`,
+		url: `${config.API_BASE_URI}${config.endpoints.todos}`,
 		body: {
 			task: bundle.inputData.task,
 			completed: bundle.inputData.completed || false,
@@ -41,7 +41,7 @@ module.exports = {
 				key: 'completed',
 				label: 'Is completed?',
 				required: false,
-				choices: [true, false],
+				choices: { true: 'yes', false: 'no' },
 			},
 		],
 
