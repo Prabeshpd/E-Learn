@@ -1,23 +1,21 @@
 const config = {
-  env: process.env.NODE_ENV || 'development',
+  env: process.env.REACT_APP_ENV || 'development',
   basename: process.env.REACT_APP_BASE_NAME || '/',
   backendAPI: {
-    baseURI: process.env.backendPortalAPI,
+    baseURI: process.env.REACT_APP_API_BASE_URI,
   },
-  users: {
-    create: '/users',
-    fetchOne: '/users/:id',
-    fetchAll: '/users',
-    self: '/users/me',
-  },
-  auth: {
-    signIn: '/users/signIn',
-    refreshAccessToken: '/users/refreshTokens',
-  },
-  tasks: {
-    create: '/tasks',
-    fetchOne: '/tasks/:id',
-    fetchUserTask: '/tasks/user/:userId',
+  endpoints: {
+    users: {
+      create: '/users',
+      fetchOne: '/users/:id',
+      fetchAll: '/users',
+      self: '/users/me',
+    },
+    auth: {
+      signIn: '/users/signIn',
+      refreshAccessToken: '/users/refreshTokens',
+    },
+    todos: '/todos',
   },
 };
 
